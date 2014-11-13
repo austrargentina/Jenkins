@@ -1,0 +1,61 @@
+/**
+@author:Daniel Scheuch
+@contact:dscheuch@student.tgm.ac.at
+
+stylesheet for enabling parallax scrolling in the index content area
+
+**/
+
+
+  .parallax {
+    height: 100vh;
+	    overflow: auto !important;
+    -webkit-perspective: 1px;
+    perspective: 1px;
+    font-size:22px;
+    color:white;
+  }
+  
+  .parallax__group {
+  position: relative;
+  height: 65vh;
+  transform-style: preserve-3d;
+}
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .parallax__layer--back {
+    -webkit-transform: translateZ(-1px);
+    transform: translateZ(-1px);
+  }
+
+  .parallax__layer {
+  	padding:50vh 0;
+  }
+
+  .title {
+    position: absolute;
+  }
+  #g1{
+  	z-index:4;
+  }
+  #g2{
+  	z-index:3;
+  }
+   #g3{
+  	z-index:2;
+  }
+   #g4{
+  	z-index:1;
+  }

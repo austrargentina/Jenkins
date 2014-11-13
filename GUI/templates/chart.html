@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<!-- 	
+@author: Daniel Scheuch
+@contact: daniel.scheuch@student.tgm.ac.at 
+-->
+<html>
+	<head>
+		<title>Rock the NET</title>
+		<LINK href="{{url_for('static',filename='css/main.css') }}" rel="stylesheet" type="text/css">
+		<script type="text/JavaScript" src="{{url_for('static',filename='js/script.js') }}">
+		</script>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="pragma" content="no-cache" />
+	<head>
+	<body>
+	<script>
+// 	auto refresh without prompt to redraw the chart uncomment the line in the controller (we only got 0 values..)
+	var timeout;
+	function stopRefreshing() {
+    	clearTimeout(timeout);
+	}
+	function executeQuery() {
+		  $.ajax({
+		    url: 'http://127.0.0.1:5000/chart',
+		    success: function(data) {
+		    	console.log("refreshed");
+		    }
+		  });
+		  timeout = setTimeout(executeQuery, document.getElementById("interval").value); 
+		}
+
+		$(document).ready(function() {
+			timeout = setTimeout(executeQuery, document.getElementById("interval").value);
+		});
+	</script>
+			<div class="header">
+				<img alt="" src="{{url_for('static',filename='img/rocksenet.png') }}"> 
+			</div>
+			
+			<div class="nav">
+					  <ul class="nav-menu">
+					  		<li> 		
+								<form action="{{ url_for('index') }}" method="post">
+						    		<input type="submit" name="submit" value="Home" class="button-menu"/>
+						    	</form>
+					    	</li>
+							<li> 		
+								<form action="{{ url_for('chart') }}" method="post">
+						    		<input type="submit" name="submit" value="Policies Chart" class="button-menu"/>
+						    	</form>
+					    	</li>
+					    	<li> 		
+								<form action="{{ url_for('login') }}" method="post">
+						    		<input type="submit" name="submit" value="Login" class="button-menu"/>
+						    	</form>
+					    	</li>
+					  </ul>
+				</div>
+
+				<div class="contentbox">
+					<div class="content">
+						<div class="refresh">
+							refresh interval: <input class="form" type="text" id="interval"
+							value="5000" /> <input type="submit" name="submit" value="refresh"
+							class="button"
+							onclick="$.ajax({
+						    url: 'http://127.0.0.1:5000/chart',
+						    success: function(data) {
+						    	console.log('refreshed');
+						    }});" />			    
+							<input type="submit" name="submit" value="stop refreshing" class="button" onclick="stopRefreshing()" /> 
+						</div>
+						{% with messages = get_flashed_messages() %} 
+							{% if messages %}
+							<div class="output">
+								{% for message in messages %} {{message}}	
+							</div>
+				{% endfor %} {% endif%} {%endwith%}
+			</div>
+	
+		</div>
+</body>
+</html>

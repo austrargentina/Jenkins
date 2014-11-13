@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<!-- 	
+@author: Daniel Scheuch
+@contact: daniel.scheuch@student.tgm.ac.at 
+-->
+<html>
+	<head>
+		<title>Rock the NET | Login</title>
+		
+		<LINK href="{{url_for('static',filename='css/main.css') }}" rel="stylesheet" type="text/css">
+		
+		<!-- Load jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="{{url_for('static',filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+		<script type="text/JavaScript" src="{{url_for('static',filename='js/script.js') }}"></script>
+		
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="pragma" content="no-cache" />
+	<head>
+	<body>
+<!-- 		autorefresh -->
+	<script>
+	var timeout;
+	function stopRefreshing() {
+    	clearTimeout(timeout);
+	}
+	function executeQuery() {
+		  $.ajax({
+		    url: 'http://127.0.0.1:5000'+window.location.pathname,
+		    success: function(data) {
+		    	console.log("refreshed");
+		    }
+		  });
+		  timeout = setTimeout(executeQuery, document.getElementById("interval").value); 
+		}
+
+		$(document).ready(function() {
+			timeout = setTimeout(executeQuery, document.getElementById("interval").value);
+		});
+	</script>
+		<!-- 			loader -->
+		<script>
+		jQuery(window).load(function() {
+			jQuery("#preloader").delay(1000).fadeOut("slow");
+		})
+		</script>
+			<!--     Custom Scrollbar -->
+			<script>
+				    (function($){
+				        $(window).load(function(){
+				        	$("#scrollup").mCustomScrollbar("scrollTo","top");
+				        	$(".scroll-pane").mCustomScrollbar({
+				        		mouseWheelPixels: 70
+				        		})
+				            $("body").mCustomScrollbar({
+					            theme:"minimal-light"
+					            	
+					        });
+				        });
+				    })(jQuery);
+			</script>
+			<div class="header">
+				<img alt="" src="{{url_for('static',filename='img/rocksenet.png') }}"> 
+			</div>
+			
+			<div class="nav">
+					  <ul class="nav-menu">
+					  		<li> 		
+								<form action="{{ url_for('index') }}" method="post">
+						    		<input type="submit" name="submit" value="Home" class="button-menu"/>
+						    	</form>
+					    	</li>
+							<li> 		
+								<form action="{{ url_for('chart') }}" method="post">
+						    		<input type="submit" name="submit" value="Policies Chart" class="button-menu"/>
+						    	</form>
+					    	</li>
+					    	<li> 		
+								<form action="{{ url_for('login') }}" method="post">
+						    		<input type="submit" name="submit" value="Login" class="button-menu"/>
+						    	</form>
+					    	</li>
+					  </ul>
+				</div>
+			<div class="nav-rules">
+					  <ul class="nav-menu">
+					  		<li> 		
+								<form action="{{ url_for('getzones') }}" method="post">
+						    		<input type="submit" name="submit" value="zones" class="button-menu" onclick="document.getElementById('preloader').style.display= 'block';"/>
+						    	</form>
+					    	</li>
+							<li> 		
+								<form action="{{ url_for('getservices') }}" method="post">
+						    		<input type="submit" name="submit" value="services" class="button-menu" onclick="document.getElementById('preloader').style.display= 'block';"/>
+						    	</form>
+					    	</li>
+					    	<li> 		
+								<form action="{{ url_for('getpolicies') }}" method="post">
+						    		<input type="submit" name="submit" value="policies" class="button-menu" onclick="document.getElementById('preloader').style.display= 'block';"/>
+						    	</form>
+					    	</li>
+					    	<li>
+					    		<form action="{{ url_for('tofile') }}" method="post">
+						    		<input type="submit" name="submit" value="to file" class="button-menu" onclick="document.getElementById('preloader').style.display= 'block';"/>
+						    	</form>
+					    	</li>
+					    	<li>
+					    		<form action="{{ url_for('ssh') }}" method="post">
+						    		<input type="submit" name="submit" value="SSH" class="button-menu" onclick="document.getElementById('preloader').style.display= 'block';"/>
+						    	</form>
+					    	</li>
+					  </ul>
+				</div>
+			<div class="contentbox" id="contentbox" style="padding-bottom:100px;">
+				<div class="content" id="content">	
+					<div class="preloader" id="preloader" style="display:none;">
+						<img src="{{url_for('static',filename='img/ajax-loader.gif') }}"/>
+					</div>
+					<form action="{{ url_for('sshsend') }}" method="post">
+						<table border="0" style="margin:0 auto;">
+							  <tr>
+							    <td><div align="right">host</div></td>
+							    <td><input class="form" type="text" name="ip" value="10.0.100.10" /></td>
+							  </tr>
+							  <tr>
+							    <td><div align="right">user</div></td>
+							    <td><input class="form" type="text" name="user" value="5bhit" /> </td>
+							  </tr>
+							  <tr>
+							    <td><div align="right">password</div></td>
+							    <td><input class="form" type="password" name="pw" value="Eephaefagh1p" /></td>
+							  </tr>
+						</table><br/>
+						{% with messages = get_flashed_messages() %} 
+							{% if messages %}
+							<div class="cmd-output" id="cmd-output">
+								{% for message in messages %}
+									{{message}}
+							</div>
+								{% endfor %} 
+							{% endif%}
+						{%endwith%}
+						<div style="margin: 0 auto;width:60%;">
+					    	SSH command: <input class="form" type="text" name="cmd" value="sudo ifconfig" /> 
+					  	  <input type="submit" name="submit" value="execute" class="button" onclick="document.getElementById('preloader').style.display= 'block';"/>
+						</div>
+					</form>
+
+			</div>
+		</div>
+	</body>
+</html>

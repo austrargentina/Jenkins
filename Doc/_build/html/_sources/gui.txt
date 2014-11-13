@@ -1,0 +1,16 @@
+GUI
+===
+
+This is our implemented Graphical User Interface of our project.
+
+Project overview:
+
+.. image:: _static/overview.jpg
+
+Connection:
+
+.. image:: _static/connection.jpg
+
+Policies chart:
+
+.. image:: _static/chart.jpg

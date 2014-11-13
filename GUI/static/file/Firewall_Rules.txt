@@ -1,0 +1,99 @@
+Polices:
+	P46P
+	P50P
+	P51P
+	P53P
+	P55P
+	P56P
+	P57P
+	P58P
+	TEst
+	N/A
+	N/A
+	doyouevenssh
+
+Zones:
+	Null
+	Trust
+	Untrust
+	Self
+	Global
+	MGT
+	Untrust-Tun
+	V1-Trust
+	V1-Untrust
+	VLAN
+
+Services:
+	ANY
+	AOL
+	BGP
+	DHCP-Relay
+	DNS
+	FINGER
+	FTP
+	FTP-Get
+	FTP-Put
+	GOPHER
+	H.323
+	HTTP
+	HTTPS
+	ICMP Address Mask
+	ICMP Dest Unreachable
+	ICMP Fragment Needed
+	ICMP Fragment Reassembly
+	ICMP Host Unreachable
+	ICMP Parameter Problem
+	ICMP Port Unreachable
+	ICMP Protocol Unreach
+	ICMP Redirect
+	ICMP Redirect Host
+	ICMP Redirect TOS & Host
+	ICMP Redirect TOS & Net
+	ICMP Source Quench
+	ICMP Source Route Fail
+	ICMP Time Exceeded
+	ICMP-ANY
+	ICMP-INFO
+	ICMP-TIMESTAMP
+	IKE
+	IMAP
+	Internet Locator Service
+	IRC
+	L2TP
+	LDAP
+	MAIL
+	NetMeeting
+	NFS
+	NNTP
+	NS Global
+	NS Global PRO
+	NSM
+	NTP
+	OSPF
+	PC-Anywhere
+	PING
+	POP3
+	PPTP
+	Real Media
+	RIP
+	RLOGIN
+	RSH
+	SIP
+	SNMP
+	SQL*Net V1
+	SQL*Net V2
+	SSH
+	SUN-RPC
+	SYSLOG
+	TALK
+	TCP-ANY
+	TELNET
+	TFTP
+	TRACEROUTE
+	UDP-ANY
+	UUCP
+	VDO Live
+	WAIS
+	WINFRAME
+	X-WINDOWS

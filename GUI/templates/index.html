@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<!-- 	
+@author: Daniel Scheuch
+@contact: daniel.scheuch@student.tgm.ac.at 
+-->
+<html>
+	<head>
+	<title>Rock the NET</title>
+	
+	<LINK href="{{url_for('static',filename='css/main.css') }}"
+		rel="stylesheet" type="text/css">
+	
+	<!-- Load jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="{{url_for('static',filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+	
+	<!-- Load ScrollTo-Lib -->
+	<script
+		src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+	<script
+		src="http://flesler-plugins.googlecode.com/files/jquery.localscroll-1.2.7-min.js"></script>
+<!-- ScrollTo  -->
+	<script>
+	    $(document).ready(function()
+	    {
+	
+	        // Scroll the content inside the #scroll-container div
+	        $('#linkto').localScroll({
+	           target:'#parallax'
+	        });
+	 
+	    });
+    </script>
+   
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<head>
+	<body>
+	
+		<div class="header">
+	
+			<img src="{{url_for('static',filename='img/rocksenet.png') }}">
+		</div>
+		<div class="nav">
+			<ul class="nav-menu">
+				<li>
+					<form action="{{ url_for('index') }}" method="post">
+						<input type="submit" name="submit" value="Home" class="button-menu" />
+					</form>
+				</li>
+				<li>
+					<form action="{{ url_for('chart') }}" method="post">
+						<input type="submit" name="submit" value="Policies Chart"
+							class="button-menu" />
+					</form>
+				</li>
+				<li>
+					<form action="{{ url_for('login') }}" method="post">
+						<input type="submit" name="submit" value="Login"
+							class="button-menu" />
+					</form>
+				</li>
+			</ul>
+		</div>
+	
+		<div class="contentbox">
+			<div class="content">
+				<div class="parallax" id="parallax">
+					<h1>Trained competencies</h1>
+					<p>Using APIs, Network programming Application programming:
+						GUI-programming, parallel programming software engineering:
+						buildsystems, testing with mock-objects, design patterns</p>
+	
+					<p>
+						Since there is only one firewall-appliance available, the time each
+						team can test with the hardware will be strictly limited. Therefore
+						it is essentially to use mock-objects to allow testing the app
+						during times where the hardware is not available. An additional
+						benefit of using mock-objects will be, that a CI-Server can use
+						them for automated building and testing. You only need to consider
+						firewall-rules for TCP and UDP connections in IPv4. You can find
+						Information about the SNMP-Mibs special for the manufacturer of the
+						used appliance here (maybe not all of the Mibs work with the used
+						model): <a href="http://www.oidview.com/mibs/3224/md-3224-1.html">MIBs</a>
+					</p>
+	
+					For exploring the SNMP-Data coming from the appliance you can use
+					tools like this: <a href="http://ireasoning.com/mibbrowser.shtml">MIB-Browser</a>
+	
+					<br/>
+					<div id="linkto">
+						<p>click...
+						<a href="#start"> 
+							<img src="../static/img/scrollDown.png"
+							style="opacity: 0.5; filter: alpha(opacity = 50);" />
+						</a></p>
+					</div>
+	
+	
+	
+					<div class="parallax__group" id="g1">
+						<div class="parallax__layer parallax__layer--back">
+							<img src="../static/img/juniper.png"
+								style="opacity: 0.7; filter: alpha(opacity = 70);" />
+						</div>
+						<div class="parallax__layer parallax__layer--base">
+							<div class="title" id="start">
+								<h1>basic tasks</h1>
+								<p>Implement a simple-to-use application to monitor and
+									configure a hardware firewall appliance Juniper NetScreen 5GT .
+									The firewall allows read access over the SNMP-protocol (your app
+									should be able to test if SNMPv3 is available and if not
+									fallback on SNMPv2c) and write access over Telnet.</p>
+							</div>
+						</div>
+					</div>
+					<div class="parallax__group" id="g2">
+						<div class="parallax__layer parallax__layer--back">
+							<img src="../static/img/firewall.png"
+								style="opacity: 0.4; filter: alpha(opacity = 40);" />
+						</div>
+						<div class="parallax__layer parallax__layer--base">
+							<div class="title">
+								<h1>requirements</h1>
+								<p>List all configured firewall rules (policies) on the
+									device, add the details of the mentioned services and zones as
+									well.</p>
+								<p>Allow refreshing of the list by clicking a button and by a
+									configurable time-intervall.</p>
+								<p>Your GUI should remain responsive even with short
+									refresh-intervals!</p>
+								<p>Visualize the thru-put for a highlighted firewall-rule
+									(nice2have: multiple rows) in a line-chart (configurable
+									refresh-interval, unit bytes/sec)</p>
+								<p>Encapsulate the data retrieval for further reuse and easy
+									expansion.</p>
+								<p>An UML-model of your design will help you defend it at the
+									review!</p>
+								<p>Build a visual appealing and easy to use interface (there
+									is more than Swing out there).</p>
+	
+							</div>
+						</div>
+					</div>
+					<div class="parallax__group" id="g3">
+						<div class="parallax__layer parallax__layer--back">
+							<img src="../static/img/router.png"
+								style="opacity: 0.4; filter: alpha(opacity = 40);" />
+						</div>
+						<div class="parallax__layer parallax__layer--base">
+							<div class="title">
+								<h1>advanced tasks</h1>
+								<p>Alarm the user visually and per email if the config of the
+									firewall-rules changes. To avoid polling use the SNMP-trap
+									mechanism.</p>
+								<p>Allow managing of firewall-rules (CRUD). To accomplish
+									this, you will have to send configuration commands via telnet or
+									ssh. An admin-account is available per request.</p>
+								<p>Use multicast-groups to build a simple transaction system
+									to serialize administrative tasks on the firewall (for example
+									pass an 'admin token' to recognize the collaborator who is
+									allowed to write to the firewall). This should also work in a
+									heterogenous environment (different implementations, different
+									OSes), so you have to coordinate with other teams.</p>
+								<p>Make sure, that your interface to the firewall allows an
+									easy change of the firewall-model (new releases, manufacturer,
+									...). It is not necessary to make this configurable in the GUI
+									but must (explicitly) be considered in your software-design!</p>
+							</div>
+						</div>
+					</div>
+					<div class="parallax__group" id="g4">
+						<div class="parallax__layer parallax__layer--base">
+							<div class="title">
+								<h1>we hope you enjoy it!</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% with messages = get_flashed_messages() %} {% if messages %}
+				<div class="output">{% for message in messages %} {{message}}</div>
+				{% endfor %} {% endif%} {%endwith%}
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+/**
+@author:Daniel Scheuch
+@contact:dscheuch@student.tgm.ac.at
+**/
+
+
+/*
+Text-Style
+*/
+	h1{
+	text-shadow: 0 0 5px black;
+	}
+
+/*
+Flask output Style
+*/
+	.output{
+		color:white;
+		font-family: 'Josefin Sans', sans-serif;
+		text-align: center;
+		padding: 40px;
+		width:70%;
+		margin:0 auto;
+	}
+	
+/*
+Input Style
+*/
+/* 	Buttons */
+	.button-menu { 
+		font-size:22px;
+		font-family: 'Josefin Sans', sans-serif;
+	    background: none;
+	    border: 0px;
+	}
+	
+	.button {
+	opacity:0.5;
+		width:180px;
+		padding: 3px;
+		margin: 2px;
+	    background: none repeat scroll 0 0 #41454A;
+	    border: medium none;
+	    color: #FFFFFF;		
+	    font-family: 'Josefin Sans', sans-serif;
+	    font-size: 16px;
+	    border: 1px solid #0f2557;
+	}
+	
+	.button:hover {
+		opacity:1;
+	    text-shadow: 0 0 2px black;
+	    color: white;
+	}
+	
+/* Text Area */
+	input.form , textarea {
+		width:260px;
+	    border: 1px solid black;
+	    padding: 6px;
+	    background: white;
+	    font-size: 14px;
+	    text-align: center;
+	    font-style: yellow;
+	    opacity: 0.5;
+	    -webkit-transition: all 0.30s ease-in-out;
+	    -moz-transition: all 0.30s ease-in-out;
+	    -ms-transition: all 0.30s ease-in-out;
+	    -o-transition: all 0.30s ease-in-out;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+	
+	input.form:focus , textarea:focus {
+	    background: white;
+	    opacity: 1;
+	}
+
+
+/*
+Error and Success Style
+*/
+	.error, .success{
+		background-repeat: no-repeat;
+		background-position: 10px center;
+		border: 1px solid;
+		padding:15px 10px 15px 50px;
+		font-size:15px;
+		line-height:30px;
+	}
+	.error {
+		color: #D8000C;
+		background-color: #FFBABA;
+		background-image: url('../img/error.png');
+	}
+	.success {
+		color: #006400;
+		background-color: #c6ffbb;
+		background-image: url('../img/success.png');
+		text-align:center;
+	}

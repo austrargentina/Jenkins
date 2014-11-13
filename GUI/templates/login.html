@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<!-- 	
+@author: Daniel Scheuch
+@contact: daniel.scheuch@student.tgm.ac.at 
+-->
+<html>
+	<head>
+		<title>Rock the NET | Login</title>
+		<LINK href="{{url_for('static',filename='css/main.css') }}" rel="stylesheet" type="text/css">
+		<script type="text/JavaScript" src="{{url_for('static',filename='js/script.js') }}"></script>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="pragma" content="no-cache" />
+	<head>
+	<body>
+		<!-- 			loader -->
+		<script>
+		jQuery(window).load(function() {
+			jQuery("#preloader").delay(1000).fadeOut("slow");
+		})
+		</script>
+			<div class="header">
+				<img alt="" src="{{url_for('static',filename='img/rocksenet.png') }}"> 
+			</div>
+			
+			<div class="nav">
+					  <ul class="nav-menu">
+					  		<li> 		
+								<form action="{{ url_for('index') }}" method="post">
+						    		<input type="submit" name="submit" value="Home" class="button-menu"/>
+						    	</form>
+					    	</li>
+							<li> 		
+								<form action="{{ url_for('chart') }}" method="post">
+						    		<input type="submit" name="submit" value="Policies Chart" class="button-menu"/>
+						    	</form>
+					    	</li>
+					    	<li> 		
+								<form action="{{ url_for('login') }}" method="post">
+						    		<input type="submit" name="submit" value="Login" class="button-menu"/>
+						    	</form>
+					    	</li>
+					  </ul>
+				</div>
+			
+			<div class="contentbox">
+				<div class="content">
+					<div class="preloader" id="preloader" style="display:none;">
+						<img src="{{url_for('static',filename='img/ajax-loader.gif') }}"/>
+					</div>
+					<div class="formular">
+						<form action="{{ url_for('connect') }}" method="post">
+							<div class="input">
+								<input class="form" type="text" name="ip" value="10.0.100.10"/>		
+								<input class="form" type="text" name="user" value="5xHIT"/>
+								<input type="submit" name="submit" value="Check" class="button" onclick="document.getElementById('preloader').style.display= 'block';"/>
+							</div>
+						</form>	
+					</div>
+					{% with messages = get_flashed_messages() %}
+						{% if messages %}
+					<div class="output">
+							{% for message in messages %}
+							{{message}}
+					</div>
+								{% endfor %}
+						{% endif%}
+					{%endwith%}	
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,158 @@
+	/*
+@author: Quentin Liebl, Daniel scheuch
+@contact: qliebl@student.tgm.ac.at, dscheuch@student.tgm.ac.at
+*/
+
+/*
+html style
+*/
+	html, body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+	
+	body {
+    	overflow:hidden;
+		height: 100%;
+		width: 100%;
+		background-image: url(../img/bg.jpg);
+		font-family: 'Josefin Sans', sans-serif;
+	}
+	
+	.cmd-output{
+		color:white;
+		height:30%;
+		width:60%;
+		padding:30px;	    
+		background: rgba(110,110,110,0.5) ;
+		margin: 20px auto;
+		border: 1px solid #000000;
+	}
+	
+	.preloader{
+		padding:5px;
+		margin:0px auto;
+		width:30%;
+	}
+	
+	.refresh{
+		margin:0px auto;
+		width:80%;
+	}
+	
+	.nav{
+		float:left;	
+		width:320px;
+		position:fixed;
+	    background: rgba(255,0,0,0.4) ;
+		margin-left:40px;
+		   /*
+	    Abgerundete Ecken oben
+	    */
+	    border-radius: 15px 15px 15px 15px;
+		-moz-border-radius: 15px 15px 15px 15px;
+		-webkit-border-radius: 15px 15px 15px 15px;
+		border: 1px solid #000000;
+		
+		/*
+		Shadow
+		*/
+	    -webkit-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+		-moz-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+		box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+	}
+	.nav-rules{	
+		position:fixed;
+	    background: rgba(255,0,0,0.4) ;
+	    top:400px;
+		left:240px;
+		   /*
+	    Abgerundete Ecken oben
+	    */
+	    border-radius: 15px 15px 15px 15px;
+		-moz-border-radius: 15px 15px 15px 15px;
+		-webkit-border-radius: 15px 15px 15px 15px;
+		border: 1px solid #000000;
+		
+		/*
+		Shadow
+		*/
+	    -webkit-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+		-moz-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+		box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+	}
+	.header{
+	    margin: 0 auto;
+	    width: 930px;
+	    padding:50px;
+	}
+	
+	.formular {
+		width:100%;
+		margin: 0 auto;
+	}
+	
+	.contentbox {
+		background: rgba(255,0,0,0.5) ;
+	    margin: 0 auto;
+	    padding: 30px;   
+	    width: 1000px;
+		min-height:800px;
+	    
+	    /*
+	    Abgerundete Ecken oben
+	    */
+	    -webkit-border-top-left-radius: 15px;
+		-webkit-border-top-right-radius: 15px;
+		-moz-border-radius-topleft: 15px;
+		-moz-border-radius-topright: 15px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		
+		border: 1px solid #000000;
+		/*
+		Shadow
+		*/
+	    -webkit-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+		-moz-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+		box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.52);
+		
+		
+	}
+	.content{
+		padding:20px;
+		margin: 0 auto;
+	}
+	label{
+		font-size:17px;
+		text-align:center;
+	}
+	
+	
+	/*
+	MENU
+	*/
+	ul.nav-menu > li { 
+	    position: relative;  
+	    border-left: 2px solid #D7D8DA;
+	}
+
+	ul.nav-menu li { list-style: none; }
+	
+	ul.nav-menu li:hover {
+		/*
+		Fade
+		*/
+		-webkit-transition: all 0.30s ease-in-out;
+	    -moz-transition: all 0.40s ease-in-out;
+	    -ms-transition: all 0.40s ease-in-out;
+	    -o-transition: all 0.40s ease-in-out;
+		color:#b9b9b9;
+		background: #b9b9b9;
+	    border-left: 2px solid #5c987e;
+		
+	}
+	ul.nav-menu li:hover ul { display: block;  }
+	nav-menu ul { position: relative; } */
+/* 	} */

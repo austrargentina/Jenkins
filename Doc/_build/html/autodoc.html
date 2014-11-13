@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Auto Generated Documentation &mdash; RockTheNet 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="RockTheNet 1.0.0 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to RockTheNet’s documentation!" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to RockTheNet’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">RockTheNet 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="auto-generated-documentation">
+<h1>Auto Generated Documentation<a class="headerlink" href="#auto-generated-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>Util.Connector. <strong>__init__</strong> (self,communityData,ip,port,mib,table)</dt>
+<dd>This method is the constructor of the class Connector
+communityData The user group ip The IP address to be used port The port to be connected mib The mibfile to be connected table The specific table in the mibfile</dd>
+<dt>Util.Connector. <strong>getRules</strong> (self)</dt>
+<dd>The method connects to the Firewall appliance (via IP, Port, user group, mib file, mib table), and checks if there are any errors occurring.
+When the check was successful and no errors were appearing,  the OIDs and the specific values will be printed separately. SNMPv2 is used.</dd>
+<dt>Util.Connector. <strong>defineData</strong> (self,varBindTable)</dt>
+<dd>The method handles the retrieved Data form the firewall appliance. Cause of mass results, a rectangular            table of var-binds will be used. The width of that table is determined by the number of var-binds in req           uest and it never changes while some var-binds hitting end-of-MIB condition.</dd>
+<dt>Util.Model. <strong>__init__</strong> (self)</dt>
+<dd>This is the constructor of the class Model</dd>
+<dt>Util.Model. <strong>getChart</strong> (self)</dt>
+<dd>Get the chart and will render it</dd>
+<dt>Util.Model. <strong>setIP</strong> (self,ip)</dt>
+<dd>Set the IP-adress for the connection
+ip IP-adress</dd>
+<dt>Util.Model. <strong>setUser</strong> (self, user)</dt>
+<dd>Set the user for the connection
+user Username</dd>
+<dt>Util.Model. <strong>getFirewalllist</strong> (self)</dt>
+<dd>Get all Firewall from the device</dd>
+<dt>Util.Model. <strong>setFirewalllist</strong> (self, FirewallRule)</dt>
+<dd>Set the Firewalllist for the output
+FirewallRule Firewall rule which you want</dd>
+<dt>Util.Model. <strong>listToFile</strong> (self)</dt>
+<dd>Save the firewall output in an extra .txt-file</dd>
+<dt>Util.Model. <strong>refresh</strong> (self)</dt>
+<dd>Refresh the website</dd>
+<dt>Util.Model. <strong>RulesToString</strong> (self,name)</dt>
+<dd>Convert the output to a string
+name Rulename</dd>
+<dt>Util.Model. <strong>getThroughputValues</strong> (self)</dt>
+<dd>Get the values for drawing the policies chart</dd>
+<dt>Util.Model. <strong>validIP</strong> (self,ip)</dt>
+<dd>Validation of the IP-adress
+ip IP-adress</dd>
+<dt>Util.RenderChart. <strong>__init__</strong> (self)</dt>
+<dd>This is the constructor of the class Renderchart</dd>
+<dt>Util.RenderChart. <strong>setValues</strong> (self,array)</dt>
+<dd>Set the values for the policies chart
+array Throughput values</dd>
+<dt>Util.RenderChart. <strong>render</strong> (self)</dt>
+<dd>Draw the chart</dd>
+<dt>Objekte.FirewallRule. <strong>__init__</strong> (self,oid,value)</dt>
+<dd>This is the constructor for the class FirewallRule
+oid OID number
+value</dd>
+<dt>Objekte.FirewallRule. <strong>getValue</strong> (self)</dt>
+<dd>Get values from the firewall</dd>
+<dt>Objekte.FirewallRule. <strong>toString</strong> (self)</dt>
+<dd>Convert to a string</dd>
+<dt>Objekte.Throughput. <strong>__init__</strong> (self,value,date)</dt>
+<dd>This is the constructor of the class Throughput</dd>
+<dt>GUI.Controller. <strong>__init__</strong> (self)</dt>
+<dd>This is the constructor of the class View</dd>
+<dt>GUI.Controller. <strong>index</strong> (self)</dt>
+<dd>Render the index.html flask template</dd>
+<dt>GUI.Controller. <strong>login</strong> (self)</dt>
+<dd>Render the login.html flask template</dd>
+<dt>GUI.Controller. <strong>connect</strong> (self)</dt>
+<dd>By pushing the connect button the method test our input for validation and if there is a successful input i&#8217;ll get a message</dd>
+<dt>GUI.Controller. <strong>rules</strong> (self)</dt>
+<dd>Render the rules.html flask template</dd>
+<dt>GUI.Controller. <strong>getRules</strong> (self)</dt>
+<dd>Get the Firewall rules</dd>
+<dt>GUI.Controller. <strong>getzones</strong> (self)</dt>
+<dd>Get zones of the firewall</dd>
+<dt>GUI.Controller. <strong>getpolicies</strong> (self)</dt>
+<dd>Get policies of the firewall</dd>
+<dt>GUI.Controller. <strong>getservices</strong> (self)</dt>
+<dd>Get services of the firewall</dd>
+<dt>GUI.Controller. <strong>tofile</strong> (self)</dt>
+<dd>Save the output-rules to an extra .txt-file</dd>
+<dt>GUI.Controller. <strong>chart</strong> (self)</dt>
+<dd>Render the chart.html flask template</dd>
+<dt>GUI_Testing.test. <strong>setUp</strong> (self)</dt>
+<dd>Initialize the test environment</dd>
+<dt>GUI_Testing.test. <strong>text_search_in_python_org</strong> (self)</dt>
+<dd>Check the IP-adress input with not allowed inputs like text</dd>
+<dt>UnitTests.TestModel. <strong>setUp</strong> (self)</dt>
+<dd>Initialize the test environment</dd>
+<dt>UnitTests.TestsModel. <strong>testValidIp</strong> (self)</dt>
+<dd>Test the IP-adress input</dd>
+<dt>UnitTests.TestModel. <strong>testValidIp2</strong> (self)</dt>
+<dd>Other Test for the IP-adress input</dd>
+<dt>UnitTests.TestModel. <strong>testValidWrongParameterType</strong> (self)</dt>
+<dd>Test the user input</dd>
+<dt>UnitTests.TestModel. <strong>testValidWrongParameterType</strong> (self)</dt>
+<dd>Other test for the user input</dd>
+<dt>UnitTests.TestModel. <strong>testValidIpWrongIP</strong> (self)</dt>
+<dd>Check false ip</dd>
+<dt>UnitTests.TestModel. <strong>testValidIpTooManyParts</strong> (self)</dt>
+<dd>Check the length of the ip adress</dd>
+<dt>UnitTests.TestModel. <strong>testValidIpNumberTooHigh</strong> (self)</dt>
+<dd>One part of an ip-adress shouldn&#8217;t have more than 255</dd>
+<dt>UnitTests.TestModel. <strong>testsetIp</strong> (self)</dt>
+<dd>Test if we can set the ip-adress</dd>
+<dt>UnitTests.TestModel. <strong>testsetIpWrongParameterType</strong> (self)</dt>
+<dd>Test if we can set a false ip-adress</dd>
+<dt>UnitTests.TestModel. <strong>testsetUser</strong> (self)</dt>
+<dd>Test if we can set the user for the device</dd>
+<dt>UnitTests.TestModel. <strong>testsetUserFails</strong> (self)</dt>
+<dd>Test if we can set a false user</dd>
+<dt>UnitTests.TestModel. <strong>testGetChart</strong> (self)</dt>
+<dd>Test if we get a chart</dd>
+<dt>UnitTests.TestModel. <strong>testGetThroughputValues</strong> (self)</dt>
+<dd>Test if we get the values for drawing the throughput</dd>
+<dt>UnitTests.TestModel. <strong>testRuleToString</strong> (self)</dt>
+<dd>Test if we can convert the rules the a string</dd>
+<dt>UnitTests.TestModel. <strong>testRulesToStringNotIsString</strong> (self)</dt>
+<dd>Test if we have really converted the rules to a string</dd>
+<dt>UnitTests.TestModel. <strong>testRefresh</strong> (self)</dt>
+<dd>Test if we can refresh the website</dd>
+<dt>UnitTests.TestModel. <strong>testListToFile</strong> (self)</dt>
+<dd>Test if can save the output as a .txt-file</dd>
+<dt>UnitTests.TestModel. <strong>tearDown</strong> (self)</dt>
+<dd>Tear down of the testclass</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to RockTheNet&#8217;s documentation!</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/autodoc.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to RockTheNet’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">RockTheNet 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Oezer Cafer.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>
