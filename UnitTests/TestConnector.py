@@ -58,8 +58,8 @@ class Test(unittest.TestCase):
         result = Connector(communityData, ip, port, mib, table)
 
     #getRulesWithSNMPv3AndFallback Testcase
-    def test_getRulesWithSNMPv3AndFallback(self):
-        result = con.getRulesWithSNMPv3AndFallback()
+    """def test_getRulesWithSNMPv3AndFallback(self):
+        result = con.getRulesWithSNMPv3AndFallback()"""
 
     #getRules Testcase
     def test_getRules(self):
